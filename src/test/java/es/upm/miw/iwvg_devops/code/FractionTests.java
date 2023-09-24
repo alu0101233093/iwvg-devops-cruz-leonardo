@@ -1,6 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class FractionTest {
 
@@ -36,14 +37,13 @@ class FractionTest {
         assertEquals(0.5, fraction.decimal(), 0.0001);
     }
 
-    // Prueba para el método isProper()
     @Test
     void isProper() {
         Fraction properFraction = new Fraction(3, 4);
         Fraction improperFraction = new Fraction(5, 3);
 
-        assertEquals(true, properFraction.isProper());
-        assertEquals(false, improperFraction.isProper());
+        assertTrue(properFraction.isProper());
+        assertFalse(improperFraction.isProper());
     }
 
     @Test
@@ -51,8 +51,8 @@ class FractionTest {
         Fraction properFraction = new Fraction(3, 4);
         Fraction improperFraction = new Fraction(5, 3);
 
-        assertEquals(false, properFraction.isImproper());
-        assertEquals(true, improperFraction.isImproper());
+        assertFalse(properFraction.isImproper());
+        assertTrue(improperFraction.isImproper());
     }
 
     @Test
@@ -61,8 +61,8 @@ class FractionTest {
         Fraction fraction2 = new Fraction(2, 4);
         Fraction fraction3 = new Fraction(3, 5);
 
-        assertEquals(true, fraction1.isEquivalent(fraction2));
-        assertEquals(false, fraction1.isEquivalent(fraction3));
+        assertTrue(fraction1.isEquivalent(fraction2));
+        assertFalse(fraction1.isEquivalent(fraction3));
     }
 
     @Test
