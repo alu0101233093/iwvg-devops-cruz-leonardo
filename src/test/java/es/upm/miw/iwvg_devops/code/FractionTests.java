@@ -36,6 +36,65 @@ class FractionTest {
         assertEquals(0.5, fraction.decimal(), 0.0001);
     }
 
+    // Prueba para el método isProper()
+    @Test
+    void isProper() {
+        Fraction properFraction = new Fraction(3, 4);
+        Fraction improperFraction = new Fraction(5, 3);
+
+        assertEquals(true, properFraction.isProper());
+        assertEquals(false, improperFraction.isProper());
+    }
+
+    @Test
+    void isImproper() {
+        Fraction properFraction = new Fraction(3, 4);
+        Fraction improperFraction = new Fraction(5, 3);
+
+        assertEquals(false, properFraction.isImproper());
+        assertEquals(true, improperFraction.isImproper());
+    }
+
+    @Test
+    void isEquivalent() {
+        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction2 = new Fraction(2, 4);
+        Fraction fraction3 = new Fraction(3, 5);
+
+        assertEquals(true, fraction1.isEquivalent(fraction2));
+        assertEquals(false, fraction1.isEquivalent(fraction3));
+    }
+
+    @Test
+    void add() {
+        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction2 = new Fraction(3, 4);
+        Fraction result = fraction1.add(fraction2);
+
+        assertEquals(5, result.getNumerator());
+        assertEquals(4, result.getDenominator());
+    }
+
+    @Test
+    void multiply() {
+        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction2 = new Fraction(3, 4);
+        Fraction result = fraction1.multiply(fraction2);
+
+        assertEquals(3, result.getNumerator());
+        assertEquals(8, result.getDenominator());
+    }
+
+    @Test
+    void divide() {
+        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction2 = new Fraction(3, 4);
+        Fraction result = fraction1.divide(fraction2);
+
+        assertEquals(2, result.getNumerator());
+        assertEquals(3, result.getDenominator());
+    }
+
     @Test
     void testToString() {
         Fraction fraction = new Fraction(3, 4);
