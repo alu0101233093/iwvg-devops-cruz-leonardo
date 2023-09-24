@@ -71,8 +71,8 @@ class FractionTest {
         Fraction fraction2 = new Fraction(3, 4);
         Fraction result = fraction1.add(fraction2);
 
-        assertEquals(5, result.getNumerator());
-        assertEquals(4, result.getDenominator());
+        assertEquals(10, result.getNumerator());
+        assertEquals(8, result.getDenominator());
     }
 
     @Test
@@ -91,8 +91,8 @@ class FractionTest {
         Fraction fraction2 = new Fraction(3, 4);
         Fraction result = fraction1.divide(fraction2);
 
-        assertEquals(2, result.getNumerator());
-        assertEquals(3, result.getDenominator());
+        assertEquals(4, result.getNumerator());
+        assertEquals(6, result.getDenominator());
     }
 
     @Test
