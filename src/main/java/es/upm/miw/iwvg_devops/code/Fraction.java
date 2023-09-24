@@ -71,11 +71,11 @@ public class Fraction {
 
     public Fraction multiply(Fraction second) {
         return new Fraction(this.numerator * second.getNumerator(),this.denominator * second.getDenominator());
-    };
+    }
 
     public Fraction divide(Fraction second) {
         return new Fraction(this.numerator * second.getDenominator(),this.denominator * second.getNumerator());
-    };
+    }
 
     @Override
     public String toString() {
