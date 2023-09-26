@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UserDatabaseTests {
+class UserDatabaseTests {
 
     private UsersDatabase database;
 
