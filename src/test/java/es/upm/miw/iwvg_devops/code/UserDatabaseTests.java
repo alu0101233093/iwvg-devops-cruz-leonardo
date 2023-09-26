@@ -42,4 +42,12 @@ public class UserDatabaseTests {
         assertEquals(List.of(0.0, 1.0, 2.0, 0.2, -0.5, 0.5, 1.0), result);
     }
 
+    @Test
+    void testFindUserIdByAllProperFraction() {
+        List<String> result = database.findUserIdByAllProperFraction()
+                .collect(Collectors.toList());
+
+        assertEquals(List.of(), result);
+    }
+
 }
