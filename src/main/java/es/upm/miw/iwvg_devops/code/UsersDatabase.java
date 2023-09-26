@@ -1,6 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class UsersDatabase {
@@ -67,4 +68,14 @@ public class UsersDatabase {
                         .map(Fraction::decimal))
                 .distinct();
     }
+
+    public Stream<Double> findDecimalFractionByUserName(String name) {
+        return this.findAll()
+                .filter(user -> user.getName().equals(name))
+                .flatMap(user -> user.getFractions()
+                        .stream()
+                        .map(Fraction::decimal)
+                );
+    }
+
 }
