@@ -1,7 +1,6 @@
 package es.upm.miw.iwvg_devops.code;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class UsersDatabase {
@@ -78,4 +77,11 @@ public class UsersDatabase {
                 );
     }
 
+    public Stream<String> findUserIdByAllProperFraction() {
+        return this.findAll()
+                .filter(user -> user.getFractions()
+                        .stream()
+                        .allMatch(Fraction::isProper))
+                .map(User::getId);
+    }
 }
