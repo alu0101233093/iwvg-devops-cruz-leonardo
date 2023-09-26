@@ -57,4 +57,14 @@ public class UsersDatabase {
                         .anyMatch(Fraction::isProper))
                 .map(User::getId);
     }
+
+    public Stream<Double> findDecimalImproperFractionByUserName(String name) {
+        return this.findAll()
+                .filter(user -> user.getName().equals(name))
+                .flatMap(user -> user.getFractions()
+                        .stream()
+                        .filter(Fraction::isImproper)
+                        .map(Fraction::decimal))
+                .distinct();
+    }
 }
